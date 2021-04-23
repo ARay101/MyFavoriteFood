@@ -4,8 +4,8 @@
 body {
     padding-top: 800px;
     text-align: center;
-    background: rgb(253, 187, 45);
-    background: linear-gradient(gold 0% yellow 25% orange 50% yellow 75% gold 100%);
+    background: gold;
+    background: linear-gradient(rgba(253, 187, 45, 1) 0%, rgba(255, 136, 0, 1) 10%, rgba(255, 0, 0, 1) 20%, rgba(0, 255, 0, 1) 50%, rgba(255, 0, 0, 1) 80%, rgba(255, 136, 0, 1) 90%, rgba(253, 187, 45, 1) 100%);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -18,8 +18,15 @@ body {
     bottom: 0;
     height: 800px;
     width: 100%;
-    background: linear-gradient(rgba(253, 187, 45, 1) 0%, rgba(255, 136, 0, 1) 10%, rgba(255, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 40%, rgba(0, 255, 0, 1) 50%, rgba(0, 0, 0, 1) 60%, rgba(255, 0, 0, 1) 80%, rgba(255, 136, 0, 1) 90%, rgba(253, 187, 45, 1) 100%);
+    background: linear-gradient(gold 0% yellow 25% orange 50% yellow 75% gold 100%);
     display: table;
+    z-index: 9;
+}
+
+#records {
+    position: absolute;
+    width: 100%;
+    background-color: linear-gradient(rgba(253, 187, 45, 1) 0%, rgba(255, 136, 0, 1) 10%, rgba(255, 0, 0, 1) 20%, rgba(0, 255, 0, 1) 50%, rgba(255, 0, 0, 1) 80%, rgba(255, 136, 0, 1) 90%, rgba(253, 187, 45, 1) 100%);
     z-index: 9;
 }
 
@@ -50,7 +57,7 @@ img {
     margin: auto;
 }
 
-ul {
+#menu {
     list-style: none;
     font-family: 'Raleway', sans-serif;
     position: fixed;
@@ -61,7 +68,7 @@ ul {
     color: black;
 }
 
-li {
+#menu li {
     position: relative;
     float: left;
     color: aquamarine;
@@ -72,9 +79,20 @@ li {
     font-size: 1.3em;
 }
 
-li:hover {
+#menu li {
     color: red;
     background-color: aquamarine;
+}
+
+.menu {
+    color: red;
+    text-decoration: none;
+    background-color: aquamarine;
+}
+
+.menu:hover {
+    color: aquamarine;
+    background-color: red;
 }
 
 #bio {
@@ -95,16 +113,33 @@ li:hover {
 
 @keyframes moves {
     0% {
-        transform: translate(0,0);
+        transform: translate(0, 0);
     }
+
     25% {
-        transform: translate(-100,0);
+        transform: translate(-100, 0);
     }
+
     75% {
-        transform: translate(200,0);
+        transform: translate(200, 0);
     }
+
     100% {
-        transform: translate(-100,0);
+        transform: translate(-100, 0);
+    }
+}
+
+@keyframs scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -113,11 +148,24 @@ img {
     animation: roll 5s infinite linear;
 }
 
-#titleimage{
+#titleimage {
     position: relative;
     animation: roll 10s infinite linear;
 }
 
-#tnoan {
-  animation-play-state: paused;
+.tnoan {
+    animation: scale 10s infinite linear;
+}
+
+#vari img, #records img {
+    border-radius: 0;
+    animation-play-state: paused;
+}
+
+#vari ul, #records ul {
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
