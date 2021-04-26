@@ -157,12 +157,14 @@ img {
     animation: scale 10s infinite linear;
 }
 
-#vari img, #records img {
+#vari img,
+#records img {
     border-radius: 0;
     animation-play-state: paused;
 }
 
-#vari ul, #records ul {
+#vari ul,
+#records ul {
     list-style: none;
 }
 
